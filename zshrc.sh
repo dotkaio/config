@@ -604,3 +604,5 @@ fi
 #PROMPT
 prompt='%F{cyan}%h %F{green}%B%/%F{red}%b $(branch_name)%f
 ➜ '
+
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH
