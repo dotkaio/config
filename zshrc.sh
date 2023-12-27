@@ -96,36 +96,23 @@ HISTFILE="$HOME/.histfile"
 REACT_DIR="$HOME/Developer/React"
 PYTHON_DIR="$HOME/Developer/Python"
 ZDOTDIR="$HOME/.config"
-# visual studio code as editor
-EDITOR="code -w"
-# export EDITOR="code -w"
-export VISUAL="code -w"
-MICRO_CONFIG_HOME="$HOME/.config/plugin/micro"
 
 #EXPORTS
 export NVM_DIR="$CONFIG/.nvm"
-export PATH=$GEM_HOME/bin:$PATH
+export CHROME_EXECUTABLE="/Users/kaiorferraz/Applications/Chromium.app/Contents/MacOS/Chromium"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"
-export CHROME_EXECUTABLE="/Applications/Chromium.app/Contents/MacOS/Chromium"
-# if [ -e $HOME/Pictures/Photos\ Library.photoslibrary ]; then
-# 	rm -rf $HOME/Pictures/Photos\ Library.photoslibrary
-# fi
-export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
-export LC_MESSAGES="en_US.UTF-8"
-export LC_MONETARY="en_US.UTF-8"
-export LC_NUMERIC="en_US.UTF-8"
-export LC_TIME="en_US.UTF-8"
-
-export OPENAI_API_KEY="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"
+# export LANG="en_US.UTF-8"
+# export LC_ALL="en_US.UTF-8"
+# export LC_CTYPE="en_US.UTF-8"
+# export LC_MESSAGES="en_US.UTF-8"
+# export LC_MONETARY="en_US.UTF-8"
+# export LC_NUMERIC="en_US.UTF-8"
+# export LC_TIME="en_US.UTF-8"
 
 export HOMEBREW_NO_ENV_HINTS=1
-export HOMEBREW_CASK_OPTS=--require-sha
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_AUTO_UPDATE=1
+# export HOMEBREW_CASK_OPTS=--require-sha
+export HOMEBREW_NO_ANALYTICS=0
+export HOMEBREW_NO_AUTO_UPDATE=0
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 # export HOMEBREW_NO_INSTALL_CLEANUP=1
 # export HOMEBREW_NO_INSTALL_UPGRADE=1
@@ -586,23 +573,21 @@ path /usr/bin
 path /usr/sbin
 path /usr/local/bin
 path /usr/local/sbin
-
-if [[ -d $CONFIG/homebrew/bin ]]; then
-	path $CONFIG/homebrew/bin
-elif [[ -d /opt/homebrew/bin ]]; then
-	path /opt/homebrew/opt/ruby/bin/
-	path /opt/homebrew/bin
-	path /opt/homebrew/sbin
-fi
-if [[ -d $HOME/.gem/bin ]]; then
-	path $HOME/.gem/bin
-fi
-if [[ -d $HOME/.nvm ]]; then
-	path $HOME/.nvm
-fi
+path /opt/homebrew/bin
 
 #PROMPT
 prompt='%F{cyan}%h %F{green}%B%/%F{red}%b $(branch_name)%f
 ➜ '
 
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+	autoload -Uz compinit
+	compinit
+fi
