@@ -97,27 +97,6 @@ REACT_DIR="$HOME/Developer/React"
 PYTHON_DIR="$HOME/Developer/Python"
 ZDOTDIR="$HOME/.config"
 
-#EXPORTS
-export NVM_DIR="$CONFIG/.nvm"
-export CHROME_EXECUTABLE="/Users/kaiorferraz/Applications/Chromium.app/Contents/MacOS/Chromium"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"
-# export LANG="en_US.UTF-8"
-# export LC_ALL="en_US.UTF-8"
-# export LC_CTYPE="en_US.UTF-8"
-# export LC_MESSAGES="en_US.UTF-8"
-# export LC_MONETARY="en_US.UTF-8"
-# export LC_NUMERIC="en_US.UTF-8"
-# export LC_TIME="en_US.UTF-8"
-
-export HOMEBREW_NO_ENV_HINTS=1
-# export HOMEBREW_CASK_OPTS=--require-sha
-export HOMEBREW_NO_ANALYTICS=0
-export HOMEBREW_NO_AUTO_UPDATE=0
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-# export HOMEBREW_NO_INSTALL_CLEANUP=1
-# export HOMEBREW_NO_INSTALL_UPGRADE=1
-# export PYTHONSTARTUP="$CONFIG/pythonrc"
-
 #APPS
 facetime="/System/Applications/FaceTime.app"
 messages="/System/Applications/Messages.app"
@@ -584,6 +563,20 @@ export PATH=$GEM_HOME/bin:$PATH
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+#EXPORTS
+export NVM_DIR="$CONFIG/.nvm"
+# export CHROME_EXECUTABLE="/Users/kaiorferraz/Applications/Chromium.app/Contents/MacOS/Chromium"
+export CHROME_EXECUTABLE="/Applications/Chromium.app/Contents/MacOS/Chromium"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"
+export PATH="$PATH:$JAVA_HOME/bin"
+export HOMEBREW_NO_ENV_HINTS=1          # Disable Homebrew's "please do not report this issue to Homebrew/cask/*" message
+export HOMEBREW_CASK_OPTS=--require-sha # Require SHA checksums for Casks
+export HOMEBREW_NO_ANALYTICS=1          # Disable Homebrew's analytics
+export HOMEBREW_NO_AUTO_UPDATE=1        # Disable Homebrew's automatic update
+export HOMEBREW_NO_INSECURE_REDIRECT=1  # Disable Homebrew's insecure redirect warning
+export HOMEBREW_NO_INSTALL_CLEANUP=1    # Disable Homebrew's cleanup of outdated versions
+export HOMEBREW_NO_INSTALL_UPGRADE=1    # Disable Homebrew's upgrade of already installed formulae
+# export PYTHONSTARTUP="$CONFIG/pythonrc"
 
 if type brew &>/dev/null; then
 	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
