@@ -1,0 +1,38 @@
+Docker.app
+Firefox.app
+TestFlight.app
+Visual Studio Code.app
+Pastery for Xcode.app
+SwiftFormat for Xcode.app
+System Designer.app
+Whisk.app
+XCFormat.app
+iTerm.app
+Archive.zip
+appIconMaker.app
+Aloha VPN.app
+Safari.app
+Santa.app
+Visual Table.app
+Install macOS Mojave.app
+FlutterFlow.app
+Install macOS Sierra.app
+ASO Toolkit.app
+Android Studio.app
+Pixelmator Pro.app
+HextEdit.app
+Little Snitch.app
+Xcode.app
+Rectangle.app
+Key Codes.app
+Steep.app
+UTM.app
+Chromium.app
+Apple Configurator.app
+Personal Web Server.app
+Virtual Location.app
+Actions.app
+Fleet.app
+Filebar.app
+Rectangle Pro.app
+AlohaVPN.app
