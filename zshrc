@@ -433,11 +433,13 @@ function clone {
         echo "$@" | cut -d '/' -f 5 | pbc
         cd $(pbp)
         t
+        cd ~
     else
         git clone https://github.com/$@
         echo "$@" | cut -d '/' -f 2 | pbc
         cd $(pbp)
         t
+        cd ~
     fi
 
 }

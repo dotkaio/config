@@ -1,3 +1,13 @@
+#
+# Sample /etc/sudoers file.
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# See the sudoers man page for the details on how to write a sudoers file.
+
+##
+# Override built-in defaults
+##
 Defaults        env_reset
 Defaults        env_keep += "BLOCKSIZE"
 Defaults        env_keep += "COLORFGBG COLORTERM"
@@ -14,26 +24,52 @@ Defaults        env_keep += "HOME MAIL"
 
 Defaults        lecture_file = "/etc/sudo_lecture"
 
+##
+# User alias specification
+##
+# User_Alias    FULLTIMERS = millert, mikef, dowdy
+
+##
+# Runas alias specification
+##
+#Runas_Alias    OP = root, operator
+
+##
+# Host alias specification
+##
+# Host_Alias    CUNETS = 128.138.0.0/255.255.0.0
+# Host_Alias    CSNETS = 128.138.243.0, 128.138.204.0/24, 128.138.242.0
+# Host_Alias    SERVERS = master, mail, www, ns
+# Host_Alias    CDROM = orion, perseus, hercules
+
+##
+# Cmnd alias specification
+##
+
 Cmnd_Alias NP = \
-        /usr/bin/less, \
         /usr/local/bin/santactl, \
-        /usr/sbin/lsof -Pni, \
         /usr/local/bin/macchanger -r, \
         /sbin/halt, \
         /sbin/pfctl, \
         /sbin/ifconfig, \
         /usr/sbin/spctl, \
         /usr/sbin/visudo, \
-        /usr/sbin/firmwarepasswd, \
+        /usr/local/bin/macchanger, \
         /usr/sbin/scutil, \
+        /sbin/reboot, \
         /usr/sbin/softwareupdate -i, \
         /usr/sbin/tcpdump, \
-        /bin/rm, \
-        /bin/ls, \
-        /bin/cat, \
-        /bin/ps, \
-        /bin/killall
+        /bin/rm
 
+##
+# User specification
+##
+
+# root and users in group wheel can run anything on any machine as any user
 root            ALL = (ALL) ALL
 %admin          ALL = (ALL) ALL
 kaioferraz      ALL = (ALL) NOPASSWD:NP
+
+## Read drop-in files from /private/etc/sudoers.d
+## (the '#' here does not indicate a comment)
+#includedir /private/etc/sudoers.d
